@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# WhatsApp Chat File Analysis App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- This application allows users to upload a WhatsApp chat file, parse the content, and display insights based on the chat data. The data is persisted in **localStorage**, ensuring that the chat content is available even after the page is reloaded.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
+1. [Features](#features)
+2. [Tech Stack](#tech-stack)
+3. [Setup Instructions](#setup-instructions)
+4. [Approach](#approach)
+5. [Folder Structure](#folder-structure)
+6. [Deployement on Vercel](#deployement-on-vercel)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
+- Upload a `.txt` file containing WhatsApp chat data.
+- Parse and display insights from the chat data (e.g., messages, timestamps).
+- Persist file data in **localStorage** for easy retrieval upon page reload.
+- Simple and user-friendly interface with basic validation for file type.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
+- **React**: A JavaScript library for building the user interface.
+- **localStorage**: A web storage API for persisting data across page reloads.
+- **FileReader**: A built-in JavaScript API for reading file data on the client side.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Follow these steps to set up the application locally:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites:
+- Node.js and npm should be installed on your machine. You can download and install them from [here](https://nodejs.org/).
 
-### `npm run eject`
+### 1. Clone the repository:
+```bash
+git clone https://github.com/dhanvantmarathe/museYardIntern
+cd museYardIntern
+```
+### 2. Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+``` bash
+npm install
+```
+### 3. Run the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
+The application will be running on http://localhost:3000. Open this URL in your browser to interact with the app.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Approach
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1. File Upload Handling:
+- The app uses a file input to allow the user to upload a .txt file containing WhatsApp chat data.
+- The selected file is read using the FileReader API, which reads the file as text.
 
-## Learn More
+### 2. Data Persistence:
+- When a file is successfully uploaded and its contents are parsed, the data is stored in localStorage. This ensures that the chat data persists even after a page reload.
+- On page load or reload, the app checks if there is any saved chat data in localStorage. If found, it parses and displays the data.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Data Parsing:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- The chat file is parsed to extract useful information such as messages, timestamps, and senders. This parsed data is then passed to the Analysis component for rendering.
 
-### Code Splitting
+### 4. User Interface
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- The user interface consists of a file upload input and a component to display parsed chat data.
+- Basic validation ensures that only .txt files are accepted.
 
-### Analyzing the Bundle Size
+### 5. LocalStorage Management:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- The app checks localStorage for saved chat data upon loading.
+- If the user uploads a new file, the old data is overwritten in localStorage.
+- An optional clear button allows the user to remove the data from localStorage.
 
-### Making a Progressive Web App
+## Folder structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash 
+src/
+  ├── components/
+  │    ├── FileUpload.js        
+  │    ├── Analysis.js 
+       ├── PatternChat.js 
+           
+  ├── utils/
+  │    └── parser.js            
+  ├── App.js                   
+  └── index.js                
+public/
+  ├── index.html               
+  └── styles.css     
+  ```
 
-### Advanced Configuration
+  ## Deployement on Vercel
+  ```bash
+  npm run build
+  Deployed Application URL  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  ```
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+

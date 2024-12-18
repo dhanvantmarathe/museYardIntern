@@ -1,38 +1,138 @@
-.App {
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* App Container */
+.app {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header Styling */
+h1 {
+  color: #5c67f2;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 500;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h3 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #5c67f2;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* File Upload Section */
+input[type="file"] {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #5c67f2;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #5c67f2;
+  background: #fff;
+  width: 60%;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="file"]:hover {
+  background-color: #5c67f2;
+  color: #fff;
+}
+
+.error {
+  color: #e63946;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* Data Display Section */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #f7f9fc;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border-left: 4px solid #5c67f2;
+  text-align: left;
+}
+
+.data-section {
+  text-align: left;
+  margin-top: 20px;
+}
+
+/* Chart Container */
+.chart-container {
+  margin: 30px 0;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styling (if needed) */
+button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #5c67f2;
   color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #4444c1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app {
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  input[type="file"] {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 2rem;
   }
 }
