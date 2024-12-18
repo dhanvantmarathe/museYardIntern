@@ -101,8 +101,12 @@ public/
   ```bash
   npm run build
   Deployed Application URL https://muse-yard-intern.vercel.app/
+```
+## Loom Video URL
 
-  ```
+[click here](https://www.loom.com/share/c58b4c3c61ef40f7ab688991e99fb808?reminderToRecord=saveMeetingTime)
+ 
+
 
 
 
