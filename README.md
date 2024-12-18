@@ -100,7 +100,7 @@ public/
   ## Deployement on Vercel
   ```bash
   npm run build
-  Deployed Application URL  
+  Deployed Application URL [click here](https://muse-yard-intern.vercel.app/)
 
   ```
 
